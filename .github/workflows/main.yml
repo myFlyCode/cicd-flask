@@ -23,7 +23,6 @@ jobs:
         PORT: ${{ secrets.PORT }}
         script: |
           cd /home/cicd-flask
-          pid=$(cat /home/cicd-flask/logs/app.pid)
-          kill -9 $pid
+          fuser -k -n tcp 5000
           source venv/bin/activate
           python app.py
