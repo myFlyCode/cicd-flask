@@ -25,4 +25,4 @@ jobs:
           cd /home/cicd-flask
           fuser -k -n tcp 5000
           source venv/bin/activate
-          nohup python app.py
+          nohup python  -u app.py > test.log 2>&1 & 
