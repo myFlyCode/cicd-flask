@@ -32,11 +32,10 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
         PORT: ${{ secrets.PORT }}
         script: |
-          cd /home
-          mkdir kangkang
-          # cd /home/cicd-flask
-          # echo 'source code'
-          # git pull
-          # source venv/bin/activate
-          # pip install -r requirements.txt
-          # python app.py
+          # cd /home
+          # mkdir kangkang
+          cd /home/cicd-flask
+          git pull
+          source venv/bin/activate
+          pip install -r requirements.txt
+          python app.py
