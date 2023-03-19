@@ -23,6 +23,7 @@ jobs:
         PORT: ${{ secrets.PORT }}
         script: |
           cd /home/cicd-flask
+          git pull
           fuser -k -n tcp 5000
           source venv/bin/activate
           nohup python  -u app.py > test.log 2>&1 & 
